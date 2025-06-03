@@ -2,71 +2,71 @@
 import ASSET from "@/models/asset.models";
 import dbconnection from "@/connection/conn";
 
-export const addAsset = async(data) => {
-  data = {...data, dop:String(data.dop)};
-//     console.log(data)
-    try{
+export const addAsset = async (data) => {
+    await dbconnection();
+    data = { ...data, dop: String(data.dop) };
+    //     console.log(data)
+    try {
         const result = await ASSET.create(data);
-        if(result){
+        if (result) {
             console.log('inserted');
             return true;
         }
-        else{
+        else {
             return false;
         }
     }
-    catch(e)
-    {
+    catch (e) {
         console.log(e);
         return false;
     }
 }
 
 
-export const getAssets = async() => {    
-    dbconnection();
-    const tassets = await ASSET.find({}, {_id:0}).lean();
+export const getAssets = async () => {
+    await dbconnection();
+    const tassets = await ASSET.find({}, { _id: 0 }).lean();
     // const ntassets= (tassets.map((item)=>{
     //     return {...item, dop:item.dop.split('T')[0]};
     // }))
     return tassets;
 }
 
-export const editAsset = async(data) => {
-    data = {...data, dop:String(data.dop)};
+export const editAsset = async (data) => {
+    await dbconnection();
+    data = { ...data, dop: String(data.dop) };
     console.log(data)
-    try{
+    try {
         const result = await ASSET.updateOne(
-            {sno:data.sno},
-            {$set: data}
+            { sno: data.sno },
+            { $set: data }
         );
-        if(result.modifiedCount){
+        if (result.modifiedCount) {
             console.log('updated');
             return true;
         }
         else
             return false;
     }
-    catch(e)
-    {
+    catch (e) {
         console.log(e);
         return false;
     }
 }
 
 
-export const deleteAsset = async(id) => {
+export const deleteAsset = async (id) => {
+    await dbconnection();
     // data = {...data, dop:String(data.dop)};
     console.log(id)
-    try{
+    try {
         const result = await ASSET.deleteOne(
-            {sno:id}
+            { sno: id }
         );
         console.log('deleted');
         return true;
     }
-    catch(e)
-    {
+    catch (e) {
         console.log(e);
         return false;
     }
