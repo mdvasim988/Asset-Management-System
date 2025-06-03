@@ -5,7 +5,7 @@ import USER from "@/models/user.models";
 export const addUser = async (data) => {
     //   data = {...data, doj:String(data.doj)};
     //     console.log(data)
-    await dbconnection();
+     dbconnection();
     try {
         const result = await USER.create(data);
         console.log('inserted');
@@ -18,7 +18,7 @@ export const addUser = async (data) => {
 }
 
 export const editUser = async (data) => {
-    await dbconnection();
+     dbconnection();
     // data = {...data, doj:String(data.doj)};
     console.log(data)
     try {

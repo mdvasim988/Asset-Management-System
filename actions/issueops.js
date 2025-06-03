@@ -3,7 +3,7 @@ import dbconnection from "@/connection/conn";
 import ISSUE from "@/models/issue.models";
 
 export const addIssue = async (data) => {
-    await dbconnection();
+    // await dbconnection();
     data = { ...data, idate: String(data.idate), rdate: String(data.rdate) };
     // console.log(data)
     try {
@@ -23,7 +23,7 @@ export const addIssue = async (data) => {
 
 
 export const getIssue = async () => {
-    await dbconnection();
+     dbconnection();
     const temps = await ISSUE.find({}, { _id: 0 }).lean();
     // const ntassets= (tassets.map((item)=>{
     //     return {...item, dop:item.dop.split('T')[0]};
@@ -32,7 +32,7 @@ export const getIssue = async () => {
 }
 
 export const editIssue = async (data) => {
-    await dbconnection();
+    // await dbconnection();
     data = { ...data, idate: String(data.idate), rdate: String(data.rdate) };
     console.log(data)
     try {
@@ -55,7 +55,7 @@ export const editIssue = async (data) => {
 
 
 export const deleteIssue = async (id) => {
-    await dbconnection();
+    // await dbconnection();
     //   data = {...data, idate:String(data.idate), rdate:String(data.rdate)};
     console.log(id)
     try {

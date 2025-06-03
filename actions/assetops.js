@@ -3,7 +3,7 @@ import ASSET from "@/models/asset.models";
 import dbconnection from "@/connection/conn";
 
 export const addAsset = async (data) => {
-    await dbconnection();
+    // await dbconnection();
     data = { ...data, dop: String(data.dop) };
     //     console.log(data)
     try {
@@ -24,7 +24,7 @@ export const addAsset = async (data) => {
 
 
 export const getAssets = async () => {
-    await dbconnection();
+     dbconnection();
     const tassets = await ASSET.find({}, { _id: 0 }).lean();
     // const ntassets= (tassets.map((item)=>{
     //     return {...item, dop:item.dop.split('T')[0]};
@@ -33,7 +33,7 @@ export const getAssets = async () => {
 }
 
 export const editAsset = async (data) => {
-    await dbconnection();
+    // await dbconnection();
     data = { ...data, dop: String(data.dop) };
     console.log(data)
     try {
@@ -56,7 +56,7 @@ export const editAsset = async (data) => {
 
 
 export const deleteAsset = async (id) => {
-    await dbconnection();
+    // await dbconnection();
     // data = {...data, dop:String(data.dop)};
     console.log(id)
     try {

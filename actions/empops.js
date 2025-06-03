@@ -3,7 +3,7 @@ import dbconnection from "@/connection/conn";
 import EMP from "@/models/emp.models";
 
 export const addEmp = async (data) => {
-    await dbconnection();
+    // await dbconnection();
     data = { ...data, doj: String(data.doj) };
     //     console.log(data)
     try {
@@ -23,7 +23,7 @@ export const addEmp = async (data) => {
 
 
 export const getEmps = async () => {
-    await dbconnection();
+     dbconnection();
     const temps = await EMP.find({}, { _id: 0 }).lean();
     // const ntassets= (tassets.map((item)=>{
     //     return {...item, dop:item.dop.split('T')[0]};
@@ -32,7 +32,7 @@ export const getEmps = async () => {
 }
 
 export const editEmp = async (data) => {
-    await dbconnection();
+    // await dbconnection();
     data = { ...data, doj: String(data.doj) };
     console.log(data)
     try {
@@ -55,7 +55,7 @@ export const editEmp = async (data) => {
 
 
 export const deleteEmp = async (id) => {
-    await dbconnection();
+    // await dbconnection();
     // data = {...data, dop:String(data.dop)};
     console.log(id)
     try {

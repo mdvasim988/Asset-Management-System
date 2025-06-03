@@ -3,7 +3,7 @@ import dbconnection from "@/connection/conn";
 import USER from "@/models/user.models";
 
 export const addUser = async (data) => {
-    await dbconnection();
+    // await dbconnection();
     //   data = {...data, doj:String(data.doj)};
     //     console.log(data)
     try {
@@ -24,7 +24,7 @@ export const addUser = async (data) => {
 
 
 export const getUser = async () => {
-    await dbconnection();
+     dbconnection();
     const temps = await USER.find({}, { _id: 0 }).lean();
     // const ntassets= (tassets.map((item)=>{
     //     return {...item, dop:item.dop.split('T')[0]};
@@ -33,7 +33,7 @@ export const getUser = async () => {
 }
 
 export const editUser = async (data) => {
-    await dbconnection();
+    // await dbconnection();
     // data = {...data, doj:String(data.doj)};
     console.log(data)
     try {
@@ -57,7 +57,7 @@ export const editUser = async (data) => {
 
 
 export const deleteUser = async (id) => {
-    await dbconnection();
+    // await dbconnection();
     // data = {...data, dop:String(data.dop)};
     console.log(id)
     try {
