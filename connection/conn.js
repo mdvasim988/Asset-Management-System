@@ -22,7 +22,7 @@ async function dbconnection()
     if (!cached.promise) 
     {
         cached.promise = await mongoose
-        .connect(MONGO_URI, { bufferCommands: false })
+        .connect(MONGO_URI)
         .then((mongoose) => {
             console.log('Database connected successfully');
             return mongoose;
