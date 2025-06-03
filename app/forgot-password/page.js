@@ -3,7 +3,7 @@ import { editUser } from '@/actions/registerops';
 import { useRouter } from 'next/navigation';
 import React from 'react'
 
-const page = () => {
+const Forgot = () => {
     const router = useRouter();
 
     const handleSubmit = async (e) => {
@@ -51,4 +51,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Forgot

@@ -6,7 +6,7 @@ import Edituser from '@/components/usercomponents/Edituser';
 import { useSession } from "next-auth/react";
 
 
-const page = () => {
+const Getallusers = () => {
     const [users, setusers] = useState([]);
     const [add, setadd] = useState(false);
     const [edit, setedit] = useState(false);
@@ -213,4 +213,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Getallusers

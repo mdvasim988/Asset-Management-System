@@ -3,7 +3,7 @@ import { addUser } from '@/actions/registerops';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
-const page = () => {
+const Signup = () => {
     const router = useRouter();
 
     const handleSubmit = async (e) => {
@@ -57,4 +57,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Signup

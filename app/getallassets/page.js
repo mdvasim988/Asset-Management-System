@@ -5,7 +5,7 @@ import Addasset from '@/components/assetcomponents/Addasset';
 import Editasset from '@/components/assetcomponents/Editasset';
 import { useSession } from "next-auth/react";
 
-const Page = () => {
+const Getallassets = () => {
     const [assets, setassets] = useState([]);
     const [add, setadd] = useState(false);
     const [edit, setedit] = useState(false);
@@ -180,4 +180,4 @@ const Page = () => {
     )
 }
 
-export default Page
+export default Getallassets
